@@ -1,0 +1,98 @@
+/* GLOBAL STYLES */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 20px;
+}
+
+a {
+  color: inherit;
+}
+
+/* PRODUCT PAGE STYLES */
+
+.decide_layout {
+  margin: 0;
+  padding: 0 1rem 3rem;
+  min-width: 42rem;
+  max-width: 55rem;
+  margin: 0 auto;
+}
+
+.decide_header {
+	display: flex;
+  margin: 20px auto;
+  grid-column: 1 / span 3;
+}
+
+.decide_headline {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
+}
+
+.decide_image {
+  width: 100%;
+}
+
+.decide_details {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.decide_editions {
+  display: block;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: 0 auto 50px auto;
+}
+
+.decide_editions p {
+  font-weight: bold;
+}
+
+.decide_editions input {
+  zoom: 1.25;
+  transform: scale(1.5);
+}
+
+.decide_editions span {
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+.decide_editions img {
+  width: 80px;
+  height: 80px;
+  margin-left: 0.5em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.decide_recos {
+	margin-top: 80px;
+}
+
+/* NEW */
+
+.decide_thanks {
+	display: none;
+}
+
+.decide_thanks--confirm {
+	display: inline-block;
+}
+
+.decide_details--confirm {
+	display: none;
+}
+
+.decide_recos--confirm {
+	display: none;
+}

@@ -1,0 +1,69 @@
+/* GLOBAL STYLES */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 20px;
+}
+
+a {
+  color: inherit;
+}
+
+/* PRODUCT PAGE STYLES */
+
+.layout {
+  display: grid;
+  margin: 0;
+  padding: 0 1rem 1rem;
+  grid-gap: 2rem;
+  grid-template-columns: 3fr 2fr;
+  min-width: 42rem;
+  max-width: 55rem;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 20px auto;
+  grid-column: 1 / span 2;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
+}
+
+.image {
+  width: 100%;
+}
+
+
+.custom__button {
+	background-color:#e0e0e0;
+	border:1px solid #ebebeb;
+	display:inline-block;
+	cursor:pointer;
+	color:#1a1a1a;
+	font-family:Arial;
+	font-size:11px;
+	padding:8px 20px;
+	text-decoration:none;
+}
+.custom__button:hover {
+	background-color:#f0f0f0;
+}
+.custom__button:active {
+	position:relative;
+	top:1px;
+}
+
+/* NEW */
+.recos iframe {
+	border: 0;
+	width: 100%;
+	height: 750px;
+}

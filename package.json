@@ -1,0 +1,26 @@
+{
+  "name": "micro-frontends-reply",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "01_pages_links": "concurrently --names \"decide,inspire,cdn\" \"mfserve --listen 3001 01_pages_links/team-decide\" \"mfserve --listen 3002 01_pages_links/team-inspire\" \"mfserve --listen 3003 01_pages_links/cdn\" \"wait-on http://localhost:3001/product/718 && opener http://localhost:3001/product/718\"",
+    "02_iframe": "concurrently --names \"decide,inspire,cdn\" \"mfserve --listen 3001 02_iframe/team-decide\" \"mfserve --listen 3002 02_iframe/team-inspire\" \"mfserve --listen 3003 01_pages_links/cdn\" \"wait-on http://localhost:3001/product/718 && opener http://localhost:3001/product/718\"",
+    "03_ajax": "concurrently --names \"decide ,inspire,cdn,checkout\" \"mfserve --listen 3001 03_ajax/team-decide\" \"mfserve --listen 3002 --cors 03_ajax/team-inspire\" \"mfserve --listen 3003 01_pages_links/cdn\" \"wait-on http://localhost:3001/product/718 && opener http://localhost:3001/product/718\"",
+    "04_web_components": "concurrently --names \"decide,inspire,cdn,checkout\" \"mfserve --listen 3001 04_web_components/team-decide\" \"mfserve --listen 3002 --cors 04_web_components/team-inspire\" \"mfserve --listen 3003 04_web_components/cdn\" \"mfserve --listen 3004 04_web_components/team-checkout\" \"wait-on http://localhost:3001/product/911 && opener http://localhost:3001/product/911\"",
+    "05_parent_child_flow": "concurrently --names \"decide,inspire,cdn,checkout\" \"mfserve --listen 3001 05_parent_child_flow/team-decide\" \"mfserve --listen 3002 --cors 05_parent_child_flow/team-inspire\" \"mfserve --listen 3003 05_parent_child_flow/cdn\" \"mfserve --listen 3004 05_parent_child_flow/team-checkout\" \"wait-on http://localhost:3001/product/911 && opener http://localhost:3001/product/911\"",
+    "06_child_parent_flow": "concurrently --names \"decide,inspire, cdn,checkout\" \"mfserve --listen 3001 06_child_parent_flow/team-decide\" \"mfserve --listen 3002 --cors 06_child_parent_flow/team-inspire\" \"mfserve --listen 3003 06_child_parent_flow/cdn\" \"mfserve --listen 3004 06_child_parent_flow/team-checkout\" \"wait-on http://localhost:3001/product/911 && opener http://localhost:3001/product/911\"",
+	"07_fragment_fragment_flow": "concurrently --names \"decide,inspire,cdn,checkout\" \"mfserve --listen 3001 07_fragment_fragment_flow/team-decide\" \"mfserve --listen 3002 --cors 07_fragment_fragment_flow/team-inspire\" \"mfserve --listen 3003 07_fragment_fragment_flow/cdn\" \"mfserve --listen 3004 07_fragment_fragment_flow/team-checkout\" \"wait-on http://localhost:3001/product/911 && opener http://localhost:3001/product/911\"",
+	"08_flat_routing": "concurrently --names \"app-shell,decide,inspire,checkout,cdn\" \"mfserve --listen 3000 --single 08_flat_routing/app-shell\" \"mfserve --listen 3001 08_flat_routing/team-decide\" \"mfserve --listen 3002 08_flat_routing/team-inspire\" \"mfserve --listen 3003 08_flat_routing/team-checkout\" \"mfserve --listen 3004 08_flat_routing/cdn\" \"wait-on http://localhost:3000 && opener http://localhost:3000\"",
+	"09_two_level_routing": "concurrently --names \"app-shell,decide,inspire,checkout,cdn\" \"mfserve --listen 3000 --single 08_flat_routing/app-shell\" \"mfserve --listen 3001 08_flat_routing/team-decide\" \"mfserve --listen 3002 08_flat_routing/team-inspire\" \"mfserve --listen 3003 08_flat_routing/team-checkout\" \"mfserve --listen 3004 08_flat_routing/cdn\" \"wait-on http://localhost:3000 && opener http://localhost:3000\"",
+	"10_single_spa": "concurrently --names \"app-shell,decide,inspire,checkout,cdn\" \"mfserve --listen 3000 --single 10_single_spa/app-shell\" \"mfserve --listen 3001 --cors 10_single_spa/team-decide\" \"mfserve --listen 3002 --cors 10_single_spa/team-inspire\" \"mfserve --listen 3003 --cors 10_single_spa/team-checkout\" \"mfserve --listen 3004 10_single_spa/cdn\" \"wait-on http://localhost:3000 && opener http://localhost:3000\""
+    },
+  "author": "tommyr22",
+  "license": "ISC",
+  "dependencies": {
+    "@microfrontends/serve": "^11.3.0",
+    "concurrently": "^6.0.2",
+    "opener": "^1.5.2",
+    "wait-on": "^5.3.0"
+  }
+}
