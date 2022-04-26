@@ -4,12 +4,14 @@ chapter: 2
 
 # iFrame
 
-The team owning the product page includes the recommendations using an iFrame.
+The plan is to integrate the recommendations into the product page itself using an iFrame.
+With iframes, it’s possible to embed one page into another page while maintaining
+the same loose coupling and robustness properties that the link integration provides.
 search "NEW" or "OLD" comments on code to see the differences.
 
 ## Benefits
 * compatibility iframe
-* stong isolation
+* strong isolation
 
 ## The drawbacks
 * layout contraints

@@ -21,7 +21,7 @@ class CheckoutBuy extends HTMLElement {
       <a class="custom__button">$ ${prices[sku][edition]}</a>
     `;
     this.querySelector("a").addEventListener("click", () => {
-            this.dispatchEvent(new CustomEvent("checkout:item_added")); // NEW
+        this.dispatchEvent(new CustomEvent("checkout:item_added")); // NEW
     });
   }
 }
